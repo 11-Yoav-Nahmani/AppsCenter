@@ -31,8 +31,6 @@ function validate() {
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
-          }else{
-            console.log(check);
           }
   
           form.classList.add('was-validated')
@@ -41,5 +39,6 @@ function validate() {
   }
 
   function appAdded(){
-console.log(formValidation)
+    console.log('check')
+    window.location.replace('./mainPage.html')
   }

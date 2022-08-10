@@ -14,7 +14,7 @@
         <header>
             <img class="logo" src="./src/images/AppsCenter.png">
         </header>
-<form class="app-creation needs-validation" id="appForm" novalidate>
+<form class="app-creation needs-validation" onsubmit="appAdded()"  id="appForm" novalidate>
 <label class="form-label">app name*: </label>
 <input pattern="[A-Za-z0-9]{4,30}$" type="text"  class="form-control form-control-sm input-fix"  placeholder="App name" id="invalidCheck" required>
 <br>
@@ -30,7 +30,7 @@
 <label class="form-label">image url: </label>
 <input  class="form-control form-control-sm input-fix" type="text" id="invalidCheck" placeholder="image url">
 <br>
-<button class="btn btn-success add-app publish-button" id="invalidCheck" type="submit">publish application</button>
+<button class="btn btn-success add-app publish-button" id="invalidCheck" onclick="appAdded()" type="submit">publish application</button>
 <br><br>
 <label class="form-label"><strong>* - required</strong></label> 
 </form>
