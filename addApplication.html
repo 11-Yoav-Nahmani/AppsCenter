@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppsCenter</title>
+    <link rel="stylesheet" href="./assats/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./src/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img class="logo" src="./src/images/AppsCenter.png">
+        </header>
+<form class="app-creation needs-validation" id="appForm" novalidate>
+<label class="form-label">app name*: </label>
+<input pattern="[A-Za-z0-9]{4,30}$" type="text"  class="form-control form-control-sm input-fix"  placeholder="App name" id="invalidCheck" required>
+<br>
+<label class="form-label">app price*: </label>
+<input pattern="^[0-9]*\.?[0-9]*$" class="form-control form-control-sm input-fix" type="text" placeholder="App price in $" id="invalidCheck" required>
+<br>
+<label class="form-label">app description: </label>
+<textarea class="form-control form-control-sm input-fix" id="invalidCheck" placeholder="app description:"></textarea>
+<br>
+<label class="form-label">company name: </label>
+<input class="form-control form-control-sm input-fix" type="text" id="invalidCheck" placeholder="company name:">
+<br>
+<label class="form-label">image url: </label>
+<input  class="form-control form-control-sm input-fix" type="text" id="invalidCheck" placeholder="image url">
+<br>
+<button class="btn btn-success add-app publish-button" id="invalidCheck" type="submit">publish application</button>
+<br><br>
+<label class="form-label"><strong>* - required</strong></label> 
+</form>
+    </div>
+<script src="./src/applications.js"></script>
+<script src="./src/AddApp.js"></script>
+</body>
+</html>
