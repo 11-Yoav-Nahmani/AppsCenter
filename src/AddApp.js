@@ -1,5 +1,4 @@
 const addItemToTheList = (data) => {
-  
     localStorage.setItem('applications', JSON.stringify(JSON.parse(localStorage.getItem('applications')).concat(data)));
 }
 
@@ -59,14 +58,19 @@ function validate() {
             let name = document.getElementById('appName').value;
             let price = document.getElementById('priceInput').value;
             let desc = document.getElementById('appDescription').value;
+            if(desc == ''){
+              desc = 'this app does not have a description'
+            }
             let companyName = document.getElementById('companyName').value;
+              if(companyName == ''){
+                companyName = 'this app does not have a company'
+              }
             let imageUrl = document.getElementById('imageUrl').value;
-            
-            getData();
-            addItemToTheList(localStorage);
-            getNextId();
+            getData()
+            let id = new String(getNextId());
 
-            console.log(localStorage)
+            let newApp = {id,imageUrl,name,price,desc,companyName};
+            addItemToTheList(newApp)
 
             }
         );}

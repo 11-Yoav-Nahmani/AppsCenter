@@ -11,27 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-function rePrint(){
-    const link = document.getElementById('addApp');
-    if(link && localStorage.length != 0){
-      link.addEventListener('load', ()=>{
-        addItemToTheList(localStorage);
-  
-    console.log("check");
-    setTable(applications);
-      })
-    }
-  }
-
 function setTable(data) {
     let appList = document.getElementById('app-list');
     appList.textContent = '';
     data.forEach((dataRow) => {
         const company = document.createElement('div');
         company.classList.add('company')
+        
         const icon = document.createElement('img');
         icon.setAttribute('src','./src/images/'+ dataRow.id + '/' + dataRow.imageUrl);
-        icon.setAttribute('alt','./src/images/Help.png');
         icon.setAttribute('onerror','this.src="./src/images/Help.png"');
         icon.classList.add('icon');
         
@@ -65,16 +53,31 @@ function setTable(data) {
 }
 
 
+function rePrint(){
+    const link = document.getElementById('addApp');
+    if(link && localStorage.length != 0){
+        applications = getData();
+    setTable(applications);
+    localStorage.clear()
+    }
+  }
+
+
 function search(filter) {
-    console.log(filter);
     const filteredData = applications.filter((row) => row.name.includes(filter.toLowerCase()) || row.name.includes(filter.toUpperCase()));
     setTable(filteredData);
 }
 
 window.onload = () => {
     setTable(applications);
-    rePrint();
     document.getElementById('search').addEventListener('input', (event) => { search(event.target.value) });
+    addApp()
+    rePrint();
 };
 
-const addApp = document.getElementById('addApp').addEventListener('click', ()=>{ window.location.replace('./addApplication.html')})
+function addApp(){
+document.getElementById('addApp').addEventListener('click', ()=>{
+         window.location.replace('./addApplication.html');
+        })
+ 
+}
