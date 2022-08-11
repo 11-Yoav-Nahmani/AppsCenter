@@ -14,28 +14,29 @@
         <header>
             <img class="logo" src="./src/images/AppsCenter.png">
         </header>
-<form class="app-creation needs-validation" onsubmit="appAdded()"  id="appForm" novalidate>
+<form class="app-creation needs-validation"  action="./mainPage.html" id="appForm" novalidate>
 <label class="form-label">app name*: </label>
-<input pattern="[A-Za-z0-9]{4,30}$" type="text"  class="form-control form-control-sm input-fix"  placeholder="App name" id="invalidCheck" required>
+<input pattern="[A-Za-z0-9]{4,30}$" type="text"  class="form-control form-control-sm input-fix"  placeholder="App name" id="appName" required>
 <br>
 <label class="form-label">app price*: </label>
-<input pattern="^[0-9]*\.?[0-9]*$" class="form-control form-control-sm input-fix" type="text" placeholder="App price in $" id="invalidCheck" required>
+<input pattern="^[0-9]*\.?[0-9]*$" class="form-control form-control-sm input-fix" type="text" placeholder="App price in $" id="priceInput" required>
 <br>
 <label class="form-label">app description: </label>
-<textarea class="form-control form-control-sm input-fix" id="invalidCheck" placeholder="app description:"></textarea>
+<textarea pattern="[A-Za-z0-9]{0,500}$" class="form-control form-control-sm input-fix" id="appDescription" placeholder="app description:"></textarea>
 <br>
 <label class="form-label">company name: </label>
-<input class="form-control form-control-sm input-fix" type="text" id="invalidCheck" placeholder="company name:">
+<input pattern="[A-Za-z0-9]{0,30}$" class="form-control form-control-sm input-fix" type="text" id="companyName" placeholder="company name:">
 <br>
 <label class="form-label">image url: </label>
-<input  class="form-control form-control-sm input-fix" type="text" id="invalidCheck" placeholder="image url">
+<input pattern="^(.+)\/([^\/]+)$"  class="form-control form-control-sm input-fix" type="text" id="imageUrl" placeholder="image url">
 <br>
-<button class="btn btn-success add-app publish-button" id="invalidCheck" onclick="appAdded()" type="submit">publish application</button>
+<button class="btn btn-success add-app publish-button" id="confirm" type="button">publish application</button>
 <br><br>
 <label class="form-label"><strong>* - required</strong></label> 
 </form>
     </div>
 <script src="./src/applications.js"></script>
+<script src="./src/main.js"></script>
 <script src="./src/AddApp.js"></script>
 </body>
 </html>

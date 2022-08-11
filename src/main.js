@@ -11,6 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
+function rePrint(){
+    const link = document.getElementById('addApp');
+    if(link && localStorage.length != 0){
+      link.addEventListener('load', ()=>{
+        addItemToTheList(localStorage);
+  
+    console.log("check");
+    setTable(applications);
+      })
+    }
+  }
 
 function setTable(data) {
     let appList = document.getElementById('app-list');
@@ -20,6 +31,7 @@ function setTable(data) {
         company.classList.add('company')
         const icon = document.createElement('img');
         icon.setAttribute('src','./src/images/'+ dataRow.id + '/' + dataRow.imageUrl);
+        icon.setAttribute('alt','./src/images/Help.png');
         icon.setAttribute('onerror','this.src="./src/images/Help.png"');
         icon.classList.add('icon');
         
@@ -61,6 +73,7 @@ function search(filter) {
 
 window.onload = () => {
     setTable(applications);
+    rePrint();
     document.getElementById('search').addEventListener('input', (event) => { search(event.target.value) });
 };
 
