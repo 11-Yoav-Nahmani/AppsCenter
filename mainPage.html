@@ -8,7 +8,7 @@
     <title>AppsCenter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assats/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <link rel="shortcut icon" href="./src/favicon.ico" type="image/x-icon">
 </head>
 
@@ -17,16 +17,16 @@
         <header>
             <img class="logo" src="./src/images/AppsCenter.png">
         </header>
-
-        <button class="btn btn-success add-app add-button" type="button" id="addApp"> + publish new app</button>
+        <div class="col" style="display: inline-block;">
+            <a href="./addApplication.html"><button class="btn btn-success add-app add-button" type="button" id="addApp"> + publish new app</button></a>
         <form class="fix">
             <input class="form-control me-2" type="text" id="search" placeholder="Search">
             <button class="search-button">search</button>
         </form>
+    </div>
         <div class="row app-list" id="app-list"></div>
     </div>
     <script src="./src/applications.js"></script>
-    <script src="./src/AddApp.js"></script>
     <script src="./src/main.js"></script>
 </body>
 

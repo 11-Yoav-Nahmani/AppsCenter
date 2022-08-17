@@ -19,7 +19,7 @@ let applications = [
       },
       {
           'id': "3",
-          'imageUrl': "instagram.jpg",
+          'imageUrl': "",
           'name': "Instagram",
           'price': "2",
           'desc': "To talk with your friends!",
